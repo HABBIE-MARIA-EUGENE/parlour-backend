@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 from sqlalchemy import text
 
-from app.database.connection import engine
+from app.database.connection import engine, Base
+from app.models.booking import Booking
 
 app = FastAPI()
+
+Base.metadata.create_all(bind = engine)
 
 
 @app.get("/")
