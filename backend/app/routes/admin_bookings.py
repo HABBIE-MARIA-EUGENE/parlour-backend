@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.auth.security import get_current_admin
@@ -19,3 +19,24 @@ def get_all_bookings(
   bookings = db.query(Booking).all()
 
   return bookings
+
+
+@router.get("/{booking_id}", response_model=BookingResponse)
+def get_booking(
+  booking_id: int,
+  current_admin:str = Depends(get_current_admin),
+  db: Session = Depends(get_db)
+):
+  booking = (
+    db.query(Booking)
+    .filter(Booking.id == booking_id)
+    .first()
+  )
+
+  if booking is None:
+    raise HTTPException(
+      status_code=status.HTTP_404_NOT_FOUND,
+      detail="No bookings found"
+    )
+
+  return booking
