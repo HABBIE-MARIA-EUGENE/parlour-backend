@@ -5,6 +5,7 @@ from app.database.connection import engine, Base
 from app.models.booking import Booking
 from app.routes.bookings import router as booking_router
 from app.auth.routes import router as auth_router 
+from app.routes.admin_bookings import router as admin_booking_router
 
 
 app = FastAPI()
@@ -13,6 +14,7 @@ Base.metadata.create_all(bind = engine)
 
 app.include_router(booking_router)
 app.include_router(auth_router)
+app.include_router(admin_booking_router)
 
 
 @app.get("/")
