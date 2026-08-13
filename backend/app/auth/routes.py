@@ -7,6 +7,32 @@ from app.auth.security import create_access_token
 
 router = APIRouter(
   prefix="/auth",
-  tags=["Authenticcation"]
+  tags=["Authentication"]
 )
+
+@router.post("/login", response_model=TokenResponse)
+def login(credentials: LoginRequest):
+
+  admin_username = os.getenv("ADMIN_USERNAME")
+  admin_password = os.getenv("ADMIN_PASSWORD")
+
+  if (
+    credentials.username != admin_username or
+    credentials.password != admin_password
+  ):
+
+    raise HTTPException(
+      status_code=status.HTTP_401_UNAUTHORIZED,
+      detail="invalid uname or pwd"
+    )
+  access_token = create_access_token(
+    data={
+      "sub": credentials.username
+    }
+  )
+
+  return {
+    "access_token": access_token,
+    "token_type": "bearer"
+  }
 
