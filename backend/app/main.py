@@ -4,7 +4,7 @@ from sqlalchemy import text
 from app.database.connection import engine, Base
 from app.models.booking import Booking
 from app.routes.bookings import router as booking_router
-
+from app.auth.routes import router as auth_router 
 
 
 app = FastAPI()
@@ -12,6 +12,7 @@ app = FastAPI()
 Base.metadata.create_all(bind = engine)
 
 app.include_router(booking_router)
+app.include_router(auth_router)
 
 
 @app.get("/")
