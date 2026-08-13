@@ -5,6 +5,8 @@ from app.database.connection import get_db
 from app.models.booking import Booking
 from app.schemas.booking import BookingCreate, BookingResponse
 
+from app.auth.security import get_current_admin
+
 router = APIRouter(
   prefix="/bookings",
   tags=["Bookings"]
@@ -30,3 +32,12 @@ def create_booking(
   db.refresh(new_booking)
 
   return new_booking
+
+@router.get("/admin-test")
+def admin_test(
+  current_admin: str = Depends(get_current_admin)
+):
+  return {
+    "message": " u r authenticated",
+    "admin": "cur admin"
+  }
