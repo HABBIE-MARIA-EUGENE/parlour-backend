@@ -65,3 +65,27 @@ def update_booking(
 
   return booking
 
+
+@router.delete("/{booking_id}")
+def delete_booking(
+  booking_id: int,
+  _current_admin: str = Depends(get_current_admin),
+  db: Session = Depends(get_db)
+):
+  booking = (
+    db.query(Booking)
+    .filter(Booking.id == booking_id).first()
+  )
+
+  if booking is None:
+    raise HTTPException(
+      status_code=status.HTTP_404_NOT_FOUND,
+      detail="Booking not found"
+    )
+
+  db.delete(booking)
+  db.commit()
+
+  return {
+    "message": "Booking deleted"
+  }
