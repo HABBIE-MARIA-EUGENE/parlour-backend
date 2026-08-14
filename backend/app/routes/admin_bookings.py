@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.auth.security import get_current_admin
 from app.database.connection import get_db
 from app.models.booking import Booking
-from app.schemas.booking import BookingResponse
+from app.schemas.booking import BookingResponse, BookingUpdate
 
 router = APIRouter(
   prefix = "/admin/bookings",
@@ -38,5 +38,29 @@ def get_booking(
       status_code=status.HTTP_404_NOT_FOUND,
       detail="No bookings found"
     )
+
+  return booking
+
+@router.put("/{booking_id}", response_model=BookingResponse)
+def update_booking(
+  booking_id: int,
+  booking_data: BookingUpdate,
+  current_admin: str = Depends(get_current_admin),
+  db: Session = Depends(get_db)
+):
+  booking = (
+    db.query(Booking).filter(Booking.id == booking_id).first()
+  )
+
+  if booking is None:
+    raise HTTPException(
+      status_code= status.HTTP_404_NOT_FOUND,
+      detail = "Booking not found"
+    )
+
+  booking.status = booking_data.status
+
+  db.commit()
+  db.refresh(booking)
 
   return booking

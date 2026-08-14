@@ -20,4 +20,8 @@ class BookingResponse(BaseModel):
 
   class Config:
     from_attributes = True
+
+
+class BookingUpdate(BaseModel):
+  status: str
     
