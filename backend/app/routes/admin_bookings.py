@@ -45,7 +45,7 @@ def get_booking(
 def update_booking(
   booking_id: int,
   booking_data: BookingUpdate,
-  current_admin: str = Depends(get_current_admin),
+  _current_admin: str = Depends(get_current_admin),
   db: Session = Depends(get_db)
 ):
   booking = (
