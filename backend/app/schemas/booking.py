@@ -1,6 +1,8 @@
 from datetime import date, time, datetime
 from pydantic import BaseModel
 
+from enum import Enum
+
 class BookingCreate (BaseModel):
   customer_name: str
   phone: str
@@ -22,6 +24,13 @@ class BookingResponse(BaseModel):
     from_attributes = True
 
 
+class BookingStatus(str, Enum):
+  PENDING = "pending"
+  CONFIRMED = "confirmed"
+  CANCELLED = "cancelled"
+  COMPLETED = "completed"
+
+
 class BookingUpdate(BaseModel):
-  status: str
+  status: BookingStatus
     

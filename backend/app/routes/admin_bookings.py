@@ -64,3 +64,4 @@ def update_booking(
   db.refresh(booking)
 
   return booking
+
