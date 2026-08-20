@@ -3,7 +3,7 @@ import shutil
 from uuid import uuid4
 
 from fastapi import (
-  APIRouter, Depends, File, HTTPException, UploadFile
+  APIRouter, Depends, File, HTTPException, UploadFile, Form
 )
 
 from sqlalchemy.orm import Session
@@ -23,7 +23,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @router.post("/", response_model=GalleryResponse)
 def upload_gallery_image(
-  title: str,
+  title: str = Form(...),
   image: UploadFile = File(...),
   _current_admin: str = Depends(get_current_admin),
   db: Session = Depends(get_db)
