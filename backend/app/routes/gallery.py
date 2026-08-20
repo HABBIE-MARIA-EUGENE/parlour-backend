@@ -78,7 +78,7 @@ def get_gallery(
   gallery = (
     db.query(Gallery)
     .filter(Gallery.is_active == True)
-    .all
+    .all()
   )
   return gallery
 
