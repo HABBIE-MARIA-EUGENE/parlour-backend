@@ -66,4 +66,20 @@ def upload_gallery_image(
   return gallery
 
 
+public_router = APIRouter(
+  prefix="/gallery",
+  tags=["Gallery"]
+)
+
+@public_router.get("/", response_model=list[GalleryResponse])
+def get_gallery(
+  db: Session = Depends(get_db)
+):
+  gallery = (
+    db.query(Gallery)
+    .filter(Gallery.is_active == True)
+    .all
+  )
+  return gallery
+
 
