@@ -20,3 +20,19 @@ router = APIRouter(
 
 UPLOAD_DIR = "uploads/gallery"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+@router.post("/", response_model=GalleryResponse)
+def upload_gallery_image(
+  title: str,
+  image: UploadFile = File(...),
+  _current_admin: str = Depends(get_current_admin),
+  db: Session = Depends(get_db)
+):
+  allowed_extensions = {
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp"
+  }
+
+  
