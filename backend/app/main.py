@@ -8,6 +8,9 @@ from app.auth.routes import router as auth_router
 from app.routes.admin_bookings import router as admin_booking_router
 
 
+from app.models.gallery import Gallery
+
+
 app = FastAPI()
 
 Base.metadata.create_all(bind = engine)
