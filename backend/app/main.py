@@ -9,6 +9,7 @@ from app.routes.admin_bookings import router as admin_booking_router
 
 
 from app.models.gallery import Gallery
+from app.routes.gallery import router as gallery_router
 
 
 app = FastAPI()
@@ -18,6 +19,7 @@ Base.metadata.create_all(bind = engine)
 app.include_router(booking_router)
 app.include_router(auth_router)
 app.include_router(admin_booking_router)
+app.include_router(gallery_router)
 
 
 @app.get("/")
