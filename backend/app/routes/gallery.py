@@ -35,4 +35,35 @@ def upload_gallery_image(
     ".webp"
   }
 
-  
+  extension = os.path.splitext(image.filename)[1].lower()
+
+  if extension not in allowed_extensions:
+    raise HTTPException(
+      status_code=400,
+      detail="Inval img format"
+    )
+
+  filename = f"{uuid4()}{extension}"
+
+  file_path = os.path.join(
+    UPLOAD_DIR,
+    filename
+  )
+
+  with open(file_path, "wb") as buffer:
+    shutil.copyfileobj(image.file, buffer)
+
+  image_url = f"/uploads/gallery/{filename}"
+
+  gallery = Gallery(
+    title=title,image_url=image_url
+  )
+
+  db.add(gallery)
+  db.commit()
+  db.refresh(gallery)
+
+  return gallery
+
+
+
