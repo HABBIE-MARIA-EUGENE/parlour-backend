@@ -66,6 +66,35 @@ def upload_gallery_image(
   return gallery
 
 
+@router.put("/{gallery_id}", response_model=GalleryResponse)
+def update_gallery(
+  gallery_id: int,
+  is_active: bool,
+  _current_admin: str = Depends(get_current_admin),
+  db: Session = Depends(get_db)
+):
+
+  gallery = (
+    db.query(Gallery)
+    .filter(Gallery.id == gallery_id).first()
+  )
+
+  if not gallery:
+    raise HTTPException(
+      status_code=404,
+      detail="Gallery img not found"
+    )
+  gallery.is_active = is_active
+
+  db.commit()
+  db.refresh(gallery)
+
+  return gallery
+
+
+
+
+
 public_router = APIRouter(
   prefix="/gallery",
   tags=["Gallery"]
