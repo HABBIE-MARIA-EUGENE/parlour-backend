@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard | ABC Beauty Studio</title>
+
+  <link rel="stylesheet" href="../css/dash.css">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <h2>ABC Beauty Studio</h2>
+
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="bookings.html">Bookings</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+
+      <button id="logout-btn">
+        Logout
+      </button>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <header class="admin-header">
+        <h1>Dashboard</h1>
+        <p>Welcome, Admin</p>
+      </header>
+
+
+      <!-- Statistics -->
+      <section class="stats">
+
+        <div class="stat-card">
+          <h3>Total Bookings</h3>
+          <p id="total-bookings">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Pending</h3>
+          <p id="pending-bookings">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Confirmed</h3>
+          <p id="confirmed-bookings">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Completed</h3>
+          <p id="completed-bookings">0</p>
+        </div>
+
+      </section>
+
+
+      <!-- Recent Bookings -->
+      <section class="recent-bookings">
+
+        <h2>Recent Bookings</h2>
+
+        <div id="recent-bookings-container">
+          Loading...
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

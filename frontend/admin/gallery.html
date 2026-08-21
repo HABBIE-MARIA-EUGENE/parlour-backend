@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gallery | ABC Beauty Studio</title>
+
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/dash.css">
+  <link rel="stylesheet" href="../css/gallery.css">
+
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+      <h2>ABC Beauty Studio</h2>
+
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="bookings.html">Bookings</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+
+      <button id="logout-btn">
+        Logout
+      </button>
+
+    </aside>
+
+
+    <!-- Main -->
+
+    <main class="admin-main">
+
+      <header class="admin-header">
+
+        <h1>Gallery</h1>
+
+        <p>
+          Manage your parlour photos
+        </p>
+
+      </header>
+
+
+      <!-- Upload -->
+
+      <section class="gallery-upload">
+
+        <h2>Upload New Image</h2>
+
+        <form id="gallery-upload-form">
+
+          <label for="gallery-title">
+            Title
+          </label>
+
+          <input
+            type="text"
+            id="gallery-title"
+            placeholder="Example: Nail Art"
+            required
+          >
+
+
+          <label for="gallery-image">
+            Image
+          </label>
+
+          <input
+            type="file"
+            id="gallery-image"
+            accept="image/jpeg,image/png,image/webp"
+            required
+          >
+
+
+          <button type="submit">
+            Upload Image
+          </button>
+
+        </form>
+
+        <p id="gallery-message"></p>
+
+      </section>
+
+
+      <!-- Gallery -->
+
+      <section class="admin-gallery">
+
+        <h2>Existing Images</h2>
+
+        <div
+          class="admin-gallery-grid"
+          id="admin-gallery-grid"
+        >
+          Loading...
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="../js/gal_admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.foot {
+    background-color: #2b2424;
+    color: white;
+    padding: 60px 7% 20px;
+}
+
+.foot-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.foot h3,
+.foot h4 {
+    margin-bottom: 20px;
+}
+
+.foot p {
+    line-height: 1.6;
+}
+
+.foot-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.foot-links a:hover {
+    color: #c47b7b;
+}
+
+.foot-bot {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #554b4b;
+    text-align: center;
+}

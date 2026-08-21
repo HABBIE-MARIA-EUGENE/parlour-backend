@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bookings | ABC Beauty Studio</title>
+
+  <link rel="stylesheet" href="../css/bookings.css">
+  <link rel="stylesheet" href="../css/dash.css">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+      <h2>ABC Beauty Studio</h2>
+
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="bookings.html">Bookings</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+
+      <button id="logout-btn">
+        Logout
+      </button>
+
+    </aside>
+
+
+    <!-- Main -->
+
+    <main class="admin-main">
+
+      <header class="admin-header">
+
+        <h1>Bookings</h1>
+
+        <p>
+          Manage customer appointments
+        </p>
+
+      </header>
+
+
+      <section class="bookings-section">
+
+        <div id="bookings-message">
+          Loading bookings...
+        </div>
+
+
+        <div class="table-container">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+
+            </thead>
+
+
+            <tbody id="bookings-table-body">
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="../js/bookings.js"></script>
+
+</body>
+
+</html>

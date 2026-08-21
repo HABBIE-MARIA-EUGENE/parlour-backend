@@ -1,0 +1,110 @@
+.contact-hero {
+  padding: 100px 7%;
+  text-align: center;
+}
+
+
+
+.contact-hero .sec-label {
+  color: #c47b7b;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.contact-hero h1 {
+  font-size: 48px;
+  color: #2b2424;
+  margin: 15px 0;
+}
+
+.contact-hero p {
+  font-size: 18px;
+  color: #5a4a4a;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+
+.cont-sec {
+  padding: 50px 7% 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.cont-info h2,
+.cont-form h2 {
+  font-size: 32px;
+  color: #2b2424;
+  margin-bottom: 20px;
+}
+
+.cont-info > p {
+  color:#5a4a4a;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.cont-item {
+  margin-bottom: 25px;
+}
+
+.cont-info h3 {
+  color: #c47b7b;
+  margin-bottom: 5px;
+}
+.cont-item p{
+  color: #5a4a4a;
+}
+
+.cont-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-form label {
+  margin-bottom: 7px;
+  color: #2b2424;
+  font-weight: 600;
+}
+
+.cont-form input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d8c5c5;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    width: 100%;
+}
+.cont-form select {
+    min-height: 14px;
+    /* resize: vertical; */
+    margin-bottom: 20px;
+}
+
+/* .cont-form option {
+  margin-left: 10px;
+  justify-content: center;
+} */
+
+.cont-form button {
+    width: fit-content;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 6px;
+    background-color: #c47b7b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cont-form button:hover {
+    background-color: #a85f5f;
+    transform: scale(1.05);
+}
+
+

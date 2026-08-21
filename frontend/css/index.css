@@ -1,0 +1,153 @@
+
+
+.hero {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.hero h1 {
+  font-size: 80px;
+  font-weight: 700;
+  color: #cb3838b0;
+  margin-bottom: 15px;
+
+}
+
+.hero p {
+  font-size: 28px;
+  line-height: 1.6;
+  color: #5a4a4a;
+  margin-bottom: 25px;
+
+}
+
+.hero button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #c47b7b;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero button a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+.hero button:hover{
+  transform: scale(1.05);
+  background-color: #a85f5f;
+}
+
+.about-prev {
+  padding: 100px 7%;
+}
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sec-label {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #c47b7b;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.about-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #5a4a4a;
+}
+
+.about-content a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #c47b7b;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+
+.serv-pre{
+  padding: 100px 7%;
+}
+
+.serv-intro{
+  max-width: 700px;
+  margin-bottom: 4px;
+  margin: 0 auto 40px;
+  text-align: center;
+ 
+}
+
+.serv-intro h2 {
+  font-size: 36px;
+  margin: 15px 0;
+  color: #2b2424;
+
+}
+.serv-intro p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #5a4a4a;
+  max-width: 800px;
+}
+
+
+.serv-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+
+
+.serv-pre > div:first-child {
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.serv-card {
+  padding: 30px;
+  background-color: #fff9f7;
+  border: 1px solid #eadada;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.serv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+@media (max-width: 760px) {
+  .serv-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* 
+
+*/
