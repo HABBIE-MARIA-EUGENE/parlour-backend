@@ -1,7 +1,7 @@
 const bookingForm = document.getElementById("booking-form");
 const bookingMessage = document.getElementById("booking-message");
 
-const API_URL = "http://https://parlour-backend-smg5.onrender.com";
+const API_URL = "https://parlour-backend-smg5.onrender.com";
 
 bookingForm.addEventListener("submit", async (event) => {
 

@@ -1,7 +1,7 @@
 const loginForm = document.getElementById("login-form");
 const loginMessage = document.getElementById("login-message");
 
-const API_URL = "http://https://parlour-backend-smg5.onrender.com";
+const API_URL = "https://parlour-backend-smg5.onrender.com";
 
 loginForm.addEventListener("submit", async (event) => {
 

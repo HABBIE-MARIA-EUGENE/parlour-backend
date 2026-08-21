@@ -1,7 +1,7 @@
 const galleryGrid = document.getElementById("gallery-grid");
 const galleryMessage = document.getElementById("gallery-message");
 
-const API_URL = "http://https://parlour-backend-smg5.onrender.com";
+const API_URL = "https://parlour-backend-smg5.onrender.com";
 
 async function loadGallery() {
   try {
