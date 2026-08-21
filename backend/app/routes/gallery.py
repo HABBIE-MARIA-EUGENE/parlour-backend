@@ -92,6 +92,34 @@ def update_gallery(
   return gallery
 
 
+@router.delete("/{gallery_id}")
+def delete_gallery(
+  gallery_id: int,
+  _current_admin: str = Depends(get_current_admin),
+  db: Session = Depends(get_db)
+):
+  gallery = (
+    db.query(Gallery).filter(Gallery.id == gallery_id).first()
+  )
+  if not gallery:
+    raise HTTPException(
+      status_code=404,
+      detail="img not found"
+    )
+
+  file_path = gallery.image_url.lstrip("/").replace(
+    "/",
+    os.sep
+  )
+
+  db.delete(gallery)
+  db.commit()
+
+  if os.path.exists(file_path):
+    os.remove(file_path)
+
+  return {"mess": "img del successfully"}
+
 
 
 
