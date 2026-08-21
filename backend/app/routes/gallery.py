@@ -92,6 +92,21 @@ def update_gallery(
   return gallery
 
 
+@router.get("/", response_model=list[GalleryResponse])
+def get_admin_gallery(
+    _current_admin: str = Depends(get_current_admin),
+    db: Session = Depends(get_db)
+):
+    gallery = (
+        db.query(Gallery)
+        .order_by(Gallery.id.desc())
+        .all()
+    )
+
+    return gallery
+
+
+
 @router.delete("/{gallery_id}")
 def delete_gallery(
   gallery_id: int,
