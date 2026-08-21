@@ -18,7 +18,7 @@ let galleryImages = [];
 let slideInterval;
 
 
-// Load gallery
+
 async function loadSlider() {
 
   try {
@@ -69,7 +69,7 @@ async function loadSlider() {
 }
 
 
-// Create slides
+
 function createSlides() {
 
   sliderTrack.innerHTML = "";
@@ -101,7 +101,7 @@ function createSlides() {
 }
 
 
-// Create dots
+
 function createDots() {
 
   sliderDots.innerHTML = "";
@@ -141,7 +141,7 @@ function createDots() {
 }
 
 
-// Show slide
+
 function showSlide(index) {
 
   if (
@@ -186,7 +186,7 @@ function showSlide(index) {
 }
 
 
-// Next
+
 nextBtn.addEventListener(
   "click",
   () => {
@@ -220,7 +220,7 @@ prevBtn.addEventListener(
 );
 
 
-// Automatic slide
+
 function startAutoSlide() {
 
   slideInterval =
